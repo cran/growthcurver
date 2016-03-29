@@ -152,7 +152,8 @@ y_lim_max <- max(d[,setdiff(names(d), "time")]) - min(d[,setdiff(names(d), "time
 n <- 1    # keeps track of the current row in the output data frame
 for (col_name in names(d)) {
   
-  # Don't process the column called "time". It contains time and not OD600 data.
+  # Don't process the column called "time". 
+  # It contains time and not absorbance data.
   if (col_name != "time") {
 
     # Create a temporary data frame that contains just the time and current col
@@ -225,6 +226,15 @@ d_gc[1:4, ] %>%
          auc_e = round(auc_e, digits = 5), 
          sigma = round(sigma, digits = 5))
   
+
+## ---- eval = FALSE, message = FALSE--------------------------------------
+#  # Check if Growthcurver provided any notes in a plate of growthcurves returned
+#  # from SummarizeGrowthByPlate
+#  gc_out %>% filter(note != "")
+#  
+#  # Check if Growthcurver provided any notes in a single growthcurve returned
+#  # from SummarizeGrowth
+#  gc_fit$vals$note
 
 ## ---- eval = TRUE, message = FALSE---------------------------------------
 # Load dplyr and the sample output data
