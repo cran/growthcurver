@@ -103,7 +103,7 @@ SummarizeGrowthByPlate <- function(plate,
 
   if (bg_correct == "blank") {
     # check that there is a column in the plate data.frame containing the blanks
-    if (sum(grep("blank", names(plate), ignore.case = TRUE)) != 1) {
+    if (sum(grepl("blank", names(plate), ignore.case = TRUE)) != 1) {
       stop("There must be exactly one column named 'blank' in the 'plate' data.frame if you have selected the bg_correct 'plate' option.",
            call. = FALSE)
     }
