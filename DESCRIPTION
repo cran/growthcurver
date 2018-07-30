@@ -1,8 +1,8 @@
 Package: growthcurver
 Type: Package
 Title: Simple Metrics to Summarize Growth Curves
-Version: 0.2.1
-Date: 2016-03-24
+Version: 0.3.0
+Date: 2018-07-30
 Authors@R: person("Kathleen", "sprouffske", email = "sprouffske@gmail.com", role = c("aut", "cre"))
 Description: This is a simple package that fits the logistic equation to
     microbial growth curve data (e.g., repeated absorbance measurements
@@ -11,18 +11,18 @@ Description: This is a simple package that fits the logistic equation to
     the doubling time, the carrying capacity, the area under the logistic
     curve, and the time to the inflection point.
 LazyData: TRUE
-Depends: R (>= 2.10)
-Imports: caTools (>= 1.17.1), minpack.lm (>= 1.1), stats (>= 3.2.2),
-        graphics (>= 3.2.2), grDevices (>= 3.2.2)
+Depends: R (>= 3.4.0)
+Imports: minpack.lm (>= 1.1), stats (>= 3.4.0), graphics (>= 3.4.0),
+        grDevices (>= 3.4.0)
 URL: https://github.com/sprouffske/growthcurver
 BugReports: https://github.com/sprouffske/growthcurver/issues
 License: GPL (>= 2)
 Suggests: testthat, knitr, dplyr, ggplot2
 VignetteBuilder: knitr
-RoxygenNote: 5.0.0
+RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2016-03-29 09:18:21 UTC; sprouffske
+Packaged: 2018-07-30 17:12:35 UTC; sprouffske
 Author: Kathleen sprouffske [aut, cre]
 Maintainer: Kathleen sprouffske <sprouffske@gmail.com>
 Repository: CRAN
-Date/Publication: 2016-03-29 11:55:21
+Date/Publication: 2018-07-30 17:30:10 UTC
