@@ -1,4 +1,4 @@
-## ---- echo = FALSE, eval = TRUE------------------------------------------
+## ---- echo = FALSE, eval = TRUE-----------------------------------------------
 # First, load the package and the dataset. 
 library(growthcurver)
 
@@ -8,12 +8,12 @@ library(growthcurver)
 d <- growthdata
 knitr::kable(d[1:10, 1:8])
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  # Replace the next line with the location and name of your input data file.
 #  file_name <- "the/path/to/my/data/myfilename.txt"
 #  d <- read.table(file_name, header = TRUE, sep = "\t", stringsAsFactors = FALSE)
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  # Convert the "time" column from hours to minutes
 #  d$time <- d$time * 60
 #  
@@ -23,7 +23,7 @@ knitr::kable(d[1:10, 1:8])
 #  # Convert the "time" column from seconds to hours
 #  d$time <- d$time / 60 / 60
 
-## ---- eval = TRUE--------------------------------------------------------
+## ---- eval = TRUE-------------------------------------------------------------
 # First, load the package. 
 library(growthcurver)
 
@@ -46,7 +46,7 @@ gc_fit
 # And it is easy to plot the raw data and the best fit logistic curve
 plot(gc_fit)
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  # The gcfit object returned from SummarizeGrowth also contains further metrics
 #  # summarizing the growth curve data.
 #  gc_fit$vals
@@ -54,7 +54,7 @@ plot(gc_fit)
 #  # look at the structure of the gc_fit object
 #  str(gc_fit)
 
-## ---- eval = TRUE--------------------------------------------------------
+## ---- eval = TRUE-------------------------------------------------------------
 # To see all the available metrics 
 str(gc_fit$vals)
 
@@ -62,12 +62,12 @@ str(gc_fit$vals)
 gc_fit$vals$r
 
 
-## ---- eval = TRUE--------------------------------------------------------
+## ---- eval = TRUE-------------------------------------------------------------
 # First, load the package and the sample dataset. 
 library(growthcurver)
 d <- growthdata
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  # To analyze your data from Excel, you should read your data into the variable
 #  # called d. To do so, replace the next line with the name and location of
 #  # your input data file.
@@ -78,12 +78,12 @@ d <- growthdata
 #  # if you are using "blanks" for your background correction). See the
 #  # "Input Data" data section of the Vignette if you need help with this.
 
-## ---- eval = TRUE--------------------------------------------------------
+## ---- eval = TRUE-------------------------------------------------------------
 # Now, we'll use Growthcurver to summarize the growth curve data for the entire
 # plate using the default background correction method ("min").
 gc_out <- SummarizeGrowthByPlate(d)
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  # If you would like to use the "blank" background correction, then call
 #  # Growthcurver as follows
 #  gc_out <- SummarizeGrowthByPlate(d, bg_correct = "blank")
@@ -100,17 +100,17 @@ gc_out <- SummarizeGrowthByPlate(d)
 #  # We can look at the first few rows in the output using the head command.
 #  head(gc_out)
 
-## ---- eval = TRUE, echo = FALSE------------------------------------------
+## ---- eval = TRUE, echo = FALSE-----------------------------------------------
 knitr::kable(gc_out[1:5, ])
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  # Or, you can save the entire data table to a tab-separated file that can be
 #  # imported into Excel.
 #  output_file_name <- "the/path/to/my/data/myfilename.txt"
 #  write.table(gc_out, file = output_file_name,
 #              quote = FALSE, sep = "\t", row.names = FALSE)
 
-## ---- message = FALSE, fig.width = 7-------------------------------------
+## ---- message = FALSE, fig.width = 7------------------------------------------
 # As in the simple example, load the package and the data. 
 library(growthcurver)
 d <- growthdata
@@ -206,7 +206,7 @@ for (col_name in names(d)) {
 # Uncomment the next line to save the plots from your 96-well plate to a file
 # dev.off()
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  # Look at the first few rows (samples) of data in the output data frame.
 #  # (I'm only showing the first 4 rows of results, but you may want to see more.
 #  #  You can either look at everything using the command "d_gc", or adjust the
@@ -214,7 +214,7 @@ for (col_name in names(d)) {
 #  #  e.g., "d_gc[1:15,]").
 #  d_gc[1:4, ]
 
-## ---- eval = TRUE, message = FALSE, echo = FALSE-------------------------
+## ---- eval = TRUE, message = FALSE, echo = FALSE------------------------------
 library(dplyr)
 d_gc[1:4, ] %>% 
     mutate(k = round(k, digits = 5),
@@ -227,7 +227,7 @@ d_gc[1:4, ] %>%
          sigma = round(sigma, digits = 5))
   
 
-## ---- eval = FALSE, message = FALSE--------------------------------------
+## ---- eval = FALSE, message = FALSE-------------------------------------------
 #  # Check if Growthcurver provided any notes in a plate of growthcurves returned
 #  # from SummarizeGrowthByPlate
 #  gc_out %>% filter(note != "")
@@ -236,7 +236,7 @@ d_gc[1:4, ] %>%
 #  # from SummarizeGrowth
 #  gc_fit$vals$note
 
-## ---- eval = TRUE, message = FALSE---------------------------------------
+## ---- eval = TRUE, message = FALSE--------------------------------------------
 # Load dplyr and the sample output data
 library(dplyr)
 gc_out <- as_data_frame(gc_out)
@@ -245,12 +245,12 @@ gc_out <- as_data_frame(gc_out)
 hist(gc_out$sigma, main = "Histogram of sigma values", xlab = "sigma")
 
 
-## ---- eval = FALSE, message = FALSE--------------------------------------
+## ---- eval = FALSE, message = FALSE-------------------------------------------
 #  # Show the top 5 samples with the largest sigma value
 #  # (with the worst model fit to the growth curve data)
 #  gc_out %>% top_n(5, sigma) %>% arrange(desc(sigma))
 
-## ---- eval = TRUE, echo = FALSE, message = FALSE-------------------------
+## ---- eval = TRUE, echo = FALSE, message = FALSE------------------------------
 gc_out %>%  
   mutate(k = round(k, digits = 5),
          n0 = round(n0, digits = 5), 
@@ -262,7 +262,7 @@ gc_out %>%
          sigma = round(sigma, digits = 5)) %>%
   top_n(5, sigma) %>% arrange(desc(sigma))
 
-## ---- eval = TRUE, message = FALSE---------------------------------------
+## ---- eval = TRUE, message = FALSE--------------------------------------------
 # Load dplyr, ggplot2, and the sample data
 library(dplyr)
 library(ggplot2)
@@ -277,7 +277,7 @@ pca.res <- prcomp(pca_gc_out %>% select(k:sigma), center=TRUE, scale=TRUE)
 # Plot the results
 as_data_frame(list(PC1=pca.res$x[,1],
                    PC2=pca.res$x[,2],
-                   samples = rownames(pca.res$x))) %>% 
+                   samples = pca_gc_out$sample)) %>% 
   ggplot(aes(x=PC1,y=PC2, label=samples)) + 
   geom_text(size = 3)
 

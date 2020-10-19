@@ -4,8 +4,7 @@
 \alias{SummarizeGrowth}
 \title{Summarize Growth Curves}
 \usage{
-SummarizeGrowth(data_t, data_n, t_trim = 0, bg_correct = "min",
-  blank = NA)
+SummarizeGrowth(data_t, data_n, t_trim = 0, bg_correct = "min", blank = NA)
 }
 \arguments{
 \item{data_t}{A vector of timepoints (data_n must also
@@ -82,7 +81,7 @@ plot(gc)
 }
 \seealso{
 See the accompanying Vignette for an example of how to use and interpret
-SummarizeGrowth. \url{bit.ly/1p7w6dJ}.
+SummarizeGrowth. \url{https://CRAN.R-project.org/package=growthcurver/vignettes/Growthcurver-vignette.html}.
 
 See also \code{\link{gcfit}}.
 }

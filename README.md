@@ -17,15 +17,18 @@ You can install the latest development version from github with
   devtools::install_github("sprouffske/growthcurver")
   ```
 
+The paper describing Growthcurver is available [here](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1016-7).
+
 ## Using growthcurver
 
 The easiest way to get started with growthcurver is to work through the examples in the vignette. In the vignette, you can find information on
+
 * What your input data should look like
 * How to use growthcurver to get summary metrics on a single growth curve sample
 * How to use growthcurver to get summary metrics on an entire plate of growth curves
 * What those metrics mean and some best practices for quality control
 
-You can find the vignette at bit.ly/1p7w6dJ. 
+You can find the vignette [here](https://CRAN.R-project.org/package=growthcurver/vignettes/Growthcurver-vignette.html).
 
 ## A simple working example
 
@@ -37,9 +40,5 @@ gc_fit <- SummarizeGrowth(d$time, d$A1)  # do the analysis
 plot(gc_fit)                             # plot your data and the best fit
 gc_fit                                   # view some returned metrics
 ```
-
- 
-  
-
 
 

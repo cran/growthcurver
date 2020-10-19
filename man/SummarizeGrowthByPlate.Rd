@@ -4,8 +4,13 @@
 \alias{SummarizeGrowthByPlate}
 \title{Summarize Growth Curves}
 \usage{
-SummarizeGrowthByPlate(plate, t_trim = 0, bg_correct = "min",
-  plot_fit = FALSE, plot_file = "growthcurver.pdf")
+SummarizeGrowthByPlate(
+  plate,
+  t_trim = 0,
+  bg_correct = "min",
+  plot_fit = FALSE,
+  plot_file = "growthcurver.pdf"
+)
 }
 \arguments{
 \item{plate}{A data.table with at least two columns. One column contains
@@ -92,5 +97,5 @@ head(summary_plate)      # Use head to display just the first few rows
 }
 \seealso{
 See the accompanying Vignette for an example of how to use and interpret
-SummarizeGrowthByPlate. \url{bit.ly/1p7w6dJ}
+SummarizeGrowthByPlate. \url{https://CRAN.R-project.org/package=growthcurver/vignettes/Growthcurver-vignette.html}
 }
